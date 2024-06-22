@@ -12,7 +12,7 @@ import {
   onAuthStateChanged,
   signOut as firebaseSignOut,
 } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
 import firebaseConfigTemplate from "./firebase.json";
@@ -111,4 +111,6 @@ export {
   createAuthUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  collection,
+  addDoc,
 };

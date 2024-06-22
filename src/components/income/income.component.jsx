@@ -1,7 +1,11 @@
 // src/components/income/income.component.jsx
 import React, { useState } from "react";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { useAuth, db } from "../../utils/firebase/firebase.utils";
+import {
+  useAuth,
+  db,
+  collection,
+  addDoc,
+} from "../../utils/firebase/firebase.utils";
 import "../../App.scss";
 
 function IncomeComponent() {
@@ -36,10 +40,7 @@ function IncomeComponent() {
     console.log("Income data to be saved:", incomeData);
 
     try {
-      const docRef = await addDoc(
-        collection(getFirestore(), "income"),
-        incomeData
-      );
+      const docRef = await addDoc(collection(db, "income"), incomeData);
       console.log("Income document written with ID:", docRef.id);
       setDate("");
       setAmount("");
