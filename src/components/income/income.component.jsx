@@ -1,7 +1,7 @@
 // src/components/income/income.component.jsx
 import React, { useState } from "react";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { useAuth } from "../../utils/firebase/firebase.utils";
+import { useAuth, db } from "../../utils/firebase/firebase.utils";
 import "../../App.scss";
 
 function IncomeComponent() {
